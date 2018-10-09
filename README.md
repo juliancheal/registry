@@ -1,24 +1,48 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Iot/Smart Device Registry
 
-Things you may want to cover:
+# API
 
-* Ruby version
+## List all things
 
-* System dependencies
+### Definition
 
-* Configuration
+`GET /things`
 
-* Database creation
+#### Response
 
-* Database initialization
+* 200: success
 
-* How to run the test suite
+## Lookup thing details
 
-* Services (job queues, cache servers, search engines, etc.)
+### Definition
 
-* Deployment instructions
+`GET /thing/<identifier>`
 
-* ...
+#### Response
+
+* 404: device not found
+* 200: success
+
+## Delete a thing
+
+### Definition
+
+`DELETE /thing/<identifier>`
+
+#### Response
+
+* 404: device not found
+* 204: success
+
+## Register a new thing
+
+### Definition
+
+`POST /things`
+
+#### Response
+
+* 400: unknown thing
+* 201: created successfully
